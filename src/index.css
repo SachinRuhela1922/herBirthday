@@ -1,0 +1,166 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Definition of the design system. All colors, gradients, fonts, etc should be defined here. 
+All colors MUST be HSL.
+*/
+
+@layer base {
+  :root {
+    /* Soft romantic pastels */
+    --background: 300 30% 98%;
+    --foreground: 330 40% 20%;
+
+    --card: 0 0% 100%;
+    --card-foreground: 330 40% 20%;
+
+    --popover: 0 0% 100%;
+    --popover-foreground: 330 40% 20%;
+
+    /* Main pink theme */
+    --primary: 330 81% 65%;
+    --primary-foreground: 0 0% 100%;
+
+    /* Soft lavender */
+    --secondary: 270 50% 85%;
+    --secondary-foreground: 330 40% 20%;
+
+    /* Muted pastels */
+    --muted: 300 20% 95%;
+    --muted-foreground: 330 20% 50%;
+
+    /* Accent rose gold */
+    --accent: 340 75% 75%;
+    --accent-foreground: 330 40% 20%;
+
+    --destructive: 0 84.2% 60.2%;
+    --destructive-foreground: 0 0% 100%;
+
+    --border: 300 20% 90%;
+    --input: 300 20% 90%;
+    --ring: 330 81% 65%;
+
+    --radius: 1rem;
+
+    /* Custom magical colors */
+    --magic-pink: 330 81% 65%;
+    --magic-lavender: 270 50% 75%;
+    --magic-rose: 340 75% 75%;
+    --magic-skyblue: 200 70% 75%;
+    --glow-pink: 330 100% 70%;
+    --glow-lavender: 270 100% 80%;
+    --glow-skyblue: 200 100% 75%;
+
+    --sidebar-background: 0 0% 98%;
+
+    --sidebar-foreground: 240 5.3% 26.1%;
+
+    --sidebar-primary: 240 5.9% 10%;
+
+    --sidebar-primary-foreground: 0 0% 98%;
+
+    --sidebar-accent: 240 4.8% 95.9%;
+
+    --sidebar-accent-foreground: 240 5.9% 10%;
+
+    --sidebar-border: 220 13% 91%;
+
+    --sidebar-ring: 217.2 91.2% 59.8%;
+  }
+
+  .dark {
+    --background: 330 30% 10%;
+    --foreground: 300 30% 95%;
+
+    --card: 330 30% 15%;
+    --card-foreground: 300 30% 95%;
+
+    --popover: 330 30% 15%;
+    --popover-foreground: 300 30% 95%;
+
+    --primary: 330 81% 65%;
+    --primary-foreground: 0 0% 100%;
+
+    --secondary: 270 40% 30%;
+    --secondary-foreground: 300 30% 95%;
+
+    --muted: 330 20% 20%;
+    --muted-foreground: 300 20% 70%;
+
+    --accent: 340 75% 65%;
+    --accent-foreground: 0 0% 100%;
+
+    --destructive: 0 62.8% 50%;
+    --destructive-foreground: 0 0% 100%;
+
+    --border: 330 20% 25%;
+    --input: 330 20% 25%;
+    --ring: 330 81% 65%;
+
+    --magic-pink: 330 81% 65%;
+    --magic-lavender: 270 50% 65%;
+    --magic-rose: 340 75% 70%;
+    --magic-skyblue: 200 70% 65%;
+    --glow-pink: 330 100% 70%;
+    --glow-lavender: 270 100% 75%;
+    --glow-skyblue: 200 100% 70%;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+
+  body {
+    @apply bg-background text-foreground;
+    font-family: 'Poppins', sans-serif;
+    cursor: none;
+    overflow-x: hidden;
+  }
+
+  h1, h2, h3 {
+    font-family: 'Dancing Script', cursive;
+  }
+}
+
+@layer utilities {
+  .glow-text {
+    text-shadow: 0 0 20px hsl(var(--glow-pink)), 
+                 0 0 40px hsl(var(--glow-lavender));
+  }
+
+  .glow-box {
+    box-shadow: 0 0 30px hsl(var(--glow-pink) / 0.3),
+                0 0 60px hsl(var(--glow-lavender) / 0.2);
+  }
+
+  .gradient-magical {
+    background: linear-gradient(135deg, 
+      hsl(var(--magic-pink)), 
+      hsl(var(--magic-lavender)), 
+      hsl(var(--magic-rose)));
+  }
+
+  .gradient-text {
+    background: linear-gradient(135deg, 
+      hsl(var(--magic-pink)), 
+      hsl(var(--magic-lavender)));
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+  }
+
+  .perspective-1000 {
+    perspective: 1000px;
+  }
+
+  .preserve-3d {
+    transform-style: preserve-3d;
+  }
+
+  .backface-hidden {
+    backface-visibility: hidden;
+  }
+}
